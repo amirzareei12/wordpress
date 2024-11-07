@@ -1,0 +1,42 @@
+html, body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden; /* جلوگیری از اسکرول پیش‌فرض */
+        }
+
+        .container {
+            height: 100vh; /* تمام ارتفاع صفحه برای هر سکشن */
+            overflow-y: hidden; /* غیرفعال‌سازی اسکرول پیش‌فرض */
+            scroll-snap-type: y mandatory; /* فعال‌سازی اسنپ عمودی و اجباری */
+            scroll-behavior: smooth; /* اسکرول نرم */
+        }
+
+        .section {
+            scroll-snap-align: start; /* اسنپ در شروع هر سکشن */
+            height: 100vh; /* هر سکشن تمام صفحه را پر می‌کند */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+        }
+
+        .navigation-dots {
+            position: fixed;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 1000;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            margin: 10px 0;
+            background-color: gray;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .dot.active {
+            background-color: #00AEEF; /* رنگ آبی روشن برای نشان دادن سکشن فعال */
+        }
